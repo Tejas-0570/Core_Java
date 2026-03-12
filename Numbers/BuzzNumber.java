@@ -1,3 +1,10 @@
+/*
+Definition : The number which is divisible by 7 or having last digit 7
+             e.g. 70 --> Buzz Number
+                  17 --> Buzz Number
+                  10 --> Not a Buzz Number (Neither divisible by 7 nor last digit 7)
+ */
+
 import java.util.Scanner;
 
 class BuzzNumber{
