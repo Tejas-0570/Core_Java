@@ -84,7 +84,7 @@ class TwistedPrime{
         if(n < 2) return false;  // n=0 or n=1
         if(n == 2) return true;  // n=2
         if(n % 2 == 0) return false;  // n == even no.
-        for (int i = 3; i*i < n; i += 2){
+        for (int i = 3; i*i <= n; i += 2){
             if(n % i == 0) return false;
         }
         return true;
