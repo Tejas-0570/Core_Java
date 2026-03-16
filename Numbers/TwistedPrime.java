@@ -1,36 +1,36 @@
 //------------------ Easy and simple answer -----------------------------
 
-//import java.util.Scanner;
-//
-//class TwistedPrime{
-//    public static void main(String[] args){
-//        Scanner sc = new Scanner(System.in);
-//
-//        System.out.print("Enter a prime number : ");
-//        int num = sc.nextInt();
-//        int revNum = 0;
-//        boolean isTwistedPrime = true;
-//
-//        for(int i = num; i > 0; i /= 10){
-//            int ld = i % 10;
-//            revNum = revNum * 10 + ld;
-//        }
-//
-//        for(int i = 2; i <= revNum/2; i++){
-//            if(revNum % i == 0){
-//                isTwistedPrime = false;
-//                break;
-//            }
-//        }
-//
-//        if(isTwistedPrime){
-//            System.out.print(num+" is a Twisted Prime Number");
-//        }
-//        else {
-//            System.out.print(num+" is Not a Twisted Prime Number");
-//        }
-//    }
-//}
+import java.util.Scanner;
+
+class TwistedPrime{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a prime number : ");
+        int num = sc.nextInt();
+        int revNum = 0;
+        boolean isTwistedPrime = true;
+
+        for(int i = num; i > 0; i /= 10){
+            int ld = i % 10;
+            revNum = revNum * 10 + ld;
+        }
+
+        for(int i = 2; i <= revNum/2; i++){
+            if(revNum % i == 0){
+                isTwistedPrime = false;
+                break;
+            }
+        }
+
+        if(isTwistedPrime){
+            System.out.print(num+" is a Twisted Prime Number");
+        }
+        else {
+            System.out.print(num+" is Not a Twisted Prime Number");
+        }
+    }
+}
 
 
 
@@ -66,6 +66,8 @@ The logic is: If we couldn't find a factor by the time we hit the square root, w
 ==> n / 2: Easy to understand, but slow for big numbers.
 ==> i * i <= n: The professional way. It's incredibly fast. For a number like 1,000,000, your way does 500,000 checks; this way does only 1,000.
 ------------------------------------------------------------------------------------------- */
+
+/*
 
 //------------------ Complex but optimized version -----------------------------
 import java.util.Scanner;
@@ -116,3 +118,7 @@ class TwistedPrime{
 
     }
 }
+
+
+
+ */
