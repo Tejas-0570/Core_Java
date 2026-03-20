@@ -1,3 +1,17 @@
+/*
+Twin primes are a pair of prime numbers whose difference is 2.
+
+Example:
+(3, 5)
+✔️ Both are prime and their difference is 2 → Twin primes
+
+More Examples:
+
+(5, 7)
+(11, 13)
+(17, 19)
+ */
+
 import java.util.Scanner;
 
 class TwinPrime{

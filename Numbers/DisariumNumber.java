@@ -1,3 +1,17 @@
+/*
+A Disarium number is a number where the sum of its digits powered with their respective positions is equal to the number itself.
+
+Example:
+135
+
+Check:
+1¹ + 3² + 5³
+= 1 + 9 + 125
+= 135
+
+✔️ So, 135 is a Disarium number
+ */
+
 import java.util.Scanner;
 class DisariumNumber{
     public static void main(String[] args){

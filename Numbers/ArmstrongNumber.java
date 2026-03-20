@@ -1,3 +1,14 @@
+/*
+An Armstrong number is a number that is equal to the sum
+of its digits each raised to the power of the number of digits.
+
+Example:
+153 is an Armstrong number because(number has 3 digit ==> power =3)
+1³ + 5³ + 3³ = 1 + 125 + 27 = 153
+
+1⁴ + 6⁴ + 3⁴ + 4⁴ = 1 + 1296 + 81 + 256 = 1634
+ */
+
 import java.util.Scanner;
 class ArmstrongNumber{
     public static void main(String[] args){

@@ -1,3 +1,18 @@
+/*
+A Peterson number is a number where the sum of the factorials of its digits is equal to the number itself.
+
+Example:
+145
+
+Check:
+1! + 4! + 5!
+= 1 + 24 + 120
+= 145
+
+✔️ So, 145 is a Peterson number
+ */
+
+
 import java.util.Scanner;
 
 class PetersonNumber{

@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079d8894-485b-4666-abf6-dca9bd89bbea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Numbers/FactorialOfNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/ArmstrongNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/ArmstrongNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/DisariumNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/DisariumNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/FactorialOfNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/FactorialOfNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/PalindromeNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/PalindromeNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/PetersonNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/PetersonNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/PrimeNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/PrimeNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/StrongNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/StrongNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/TwinPrime.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/TwinPrime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/TwistedPrime.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/TwistedPrime.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +92,7 @@
       <workItem from="1773729834859" duration="2331000" />
       <workItem from="1773853925500" duration="7338000" />
       <workItem from="1774028390429" duration="876000" />
-      <workItem from="1774030862351" duration="2401000" />
+      <workItem from="1774030862351" duration="4008000" />
     </task>
     <servers />
   </component>

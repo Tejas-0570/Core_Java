@@ -1,3 +1,15 @@
+/*
+A twisted prime is a number that is prime, and its reverse is also a prime number.
+
+Example:
+13
+
+13 is prime
+Reverse → 31 (also prime)
+
+✔️ So, 13 is a twisted prime
+ */
+
 //------------------ Easy and simple answer -----------------------------
 
 import java.util.Scanner;

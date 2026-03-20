@@ -1,3 +1,14 @@
+/*
+A palindrome number is a number that remains the same when its digits are reversed.
+
+Example:
+121
+
+Reverse → 121
+
+✔️ Same as original, so 121 is a palindrome number
+ */
+
 import java.util.Scanner;
 
 class PalindromeNumber{

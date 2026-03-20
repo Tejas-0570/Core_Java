@@ -1,3 +1,14 @@
+/*
+A prime number is a number that has only two factors: 1 and itself.
+
+Example:
+7
+
+Factors → 1 and 7
+
+✔️ So, 7 is a prime number
+ */
+
 import java.util.Scanner;
 
 class PrimeNumber{

@@ -1,3 +1,14 @@
+/*
+The factorial of a number is the product of all positive integers from 1 up to that number.
+
+It is denoted by n!
+
+Example:
+5! = 5 × 4 × 3 × 2 × 1 = 120
+
+✔️ So, the factorial of 5 is 120
+ */
+
 import java.util.Scanner;
 public class FactorialOfNumber {
 
