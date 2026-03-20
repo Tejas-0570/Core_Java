@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079d8894-485b-4666-abf6-dca9bd89bbea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Numbers/LargestOfThreeNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Numbers/GCDorHCF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Numbers/LCM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +85,7 @@
       <workItem from="1773729834859" duration="2331000" />
       <workItem from="1773853925500" duration="7338000" />
       <workItem from="1774028390429" duration="876000" />
-      <workItem from="1774030862351" duration="4580000" />
+      <workItem from="1774030862351" duration="7237000" />
     </task>
     <servers />
   </component>
