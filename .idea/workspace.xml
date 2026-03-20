@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079d8894-485b-4666-abf6-dca9bd89bbea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Numbers/DisariumNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pattern/Pattern1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pattern/Pattern2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Numbers/ArmstrongNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/ArmstrongNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core_Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Core_Java.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,8 @@
       <workItem from="1773342031524" duration="6354000" />
       <workItem from="1773681011439" duration="11816000" />
       <workItem from="1773729834859" duration="2331000" />
-      <workItem from="1773853925500" duration="5798000" />
+      <workItem from="1773853925500" duration="7338000" />
+      <workItem from="1774028390429" duration="773000" />
     </task>
     <servers />
   </component>
