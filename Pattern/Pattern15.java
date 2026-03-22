@@ -17,11 +17,11 @@ public class Pattern15 {
                 if(i == ptr && j == 1){
                     if(val < 10) System.out.print("0"+val+" ");
                     else System.out.print(val+" ");
-                    val += 4;
+                    val += n;
                 } else {
                     if(val < 10) System.out.print("0"+val+" ");
                     else System.out.print(val+" ");
-                    val += 4;
+                    val += n;
                 }
             }
             System.out.println();

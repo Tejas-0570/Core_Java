@@ -1,3 +1,14 @@
+/*
+Pattern 10 :
+
+1 1 1 1
+2 2 2 2
+3 3 3 3
+4 4 4 4
+
+
+ */
+
 public class Pattern10 {
     public static void main(String[] args) {
         int n = 4;
