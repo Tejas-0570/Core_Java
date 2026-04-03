@@ -35,26 +35,38 @@ class NumberCodeUsingMethods{
     }
 
 
+    public static boolean isBuzz(int num){
+        return num / 7 == 0 || num % 10 == 7;
+    }
+
+
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
         int num = sc.nextInt();
+        System.out.println(); // Extra Space after number entered
 
         // ------------ Method call statement Armstrong Number ------------------
-        boolean Armstrong = isArmStrong(num);
-        if(Armstrong){
-            System.out.println(num+" is ARMSTRONG NUMBER");
+        if(isArmStrong(num)){
+            System.out.println(num+" is ARMSTRONG NUMBER\n");
         } else {
-            System.out.println(num+" is NOT a ARMSTRONG NUMBER");
+            System.out.println(num+" is NOT a ARMSTRONG NUMBER\n");
         }
 
         //------------- Method call statement for Automorphic Number ---------------
-        boolean Automorphic = isAutomorphic(num);
-        if(Automorphic){
-            System.out.println(num+" is AUTOMORPHIC NUMBER");
+        if(isAutomorphic(num)){
+            System.out.println(num+" is AUTOMORPHIC NUMBER\n");
         } else {
-            System.out.println(num+" is NOT a AUTOMORPHIC NUMBER");
+            System.out.println(num+" is NOT a AUTOMORPHIC NUMBER\n");
+        }
+
+        //------------- Method call statement for Buzz Number ---------------
+        if(isBuzz(num)){
+            System.out.println(num+" is AUTOMORPHIC NUMBER\n");
+        } else {
+            System.out.println(num+" is NOT a AUTOMORPHIC NUMBER\n");
         }
     }
 }
