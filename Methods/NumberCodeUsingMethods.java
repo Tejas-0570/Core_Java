@@ -1,6 +1,23 @@
 import java.util.Scanner;
 class NumberCodeUsingMethods{
 
+    //--------------- Methods can be used by any other methods -------------------------
+    public static int count(int num){
+        int count = 0;
+        for(int i = num ; i != 0; i /= 10){
+            count++;
+        }
+        return count;
+    }
+    public static int power(int base, int raise){
+        int result = 1;
+        while(raise > 0){
+            result *= base;
+            raise--;
+        }
+        return result;
+    }
+//------------------------------------------------------------------------------------------------------------
     // Method for Armstrong Number
     public static boolean isArmStrong(int n){
         int pow = 0;
@@ -40,6 +57,15 @@ class NumberCodeUsingMethods{
     }
 
 
+    public static boolean isDisarium(int num){
+        int count = count(num);  // count method is called inside isDisarium method
+        int sum = 0;
+        for(int i = num; i != 0; i /= 10){
+            sum += power(i % 10, count); // power method is called inside isDisarium method
+            count--;
+        }
+        return sum == num;
+    }
 
 
     public static void main(String[] args) {
@@ -64,9 +90,16 @@ class NumberCodeUsingMethods{
 
         //------------- Method call statement for Buzz Number ---------------
         if(isBuzz(num)){
-            System.out.println(num+" is AUTOMORPHIC NUMBER\n");
+            System.out.println(num+" is BUZZ NUMBER\n");
         } else {
-            System.out.println(num+" is NOT a AUTOMORPHIC NUMBER\n");
+            System.out.println(num+" is NOT a BUZZ NUMBER\n");
+        }
+
+        //------------- Method call statement for Disarium Number ---------------
+        if(isDisarium(num)){
+            System.out.println(num+" is DISARIUM NUMBER\n");
+        } else {
+            System.out.println(num+" is NOT a DISARIUM NUMBER\n");
         }
     }
 }
