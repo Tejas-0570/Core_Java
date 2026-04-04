@@ -17,6 +17,13 @@ class NumberCodeUsingMethods{
         }
         return result;
     }
+    public static int Factorial(int num){
+        int fact = 1;
+        for(int i = num; i > 1; i--){
+            fact *= i;
+        }
+        return fact;
+    }
 //------------------------------------------------------------------------------------------------------------
     // Method for Armstrong Number
     public static boolean isArmStrong(int n){
@@ -129,5 +136,8 @@ class NumberCodeUsingMethods{
         } else {
             System.out.println(num+" is ODD NUMBER\n");
         }
+
+        //------------- Method call statement for Factorial of Number ---------------
+        System.out.println("Factorial of "+num+" = "+Factorial(num));
     }
 }
