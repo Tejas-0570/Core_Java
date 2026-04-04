@@ -1,7 +1,7 @@
 import java.util.Scanner;
 class NumberCodeUsingMethods{
 
-    //--------------- Methods can be used by any other methods -------------------------
+    //--------------- Common Methods can be used by any other methods -------------------------
     public static int count(int num){
         int count = 0;
         for(int i = num ; i != 0; i /= 10){
@@ -68,6 +68,15 @@ class NumberCodeUsingMethods{
     }
 
 
+    public static boolean isDuck(int num){
+        while(num != 0){  //10345
+            if(num % 10 == 0) return true;
+            num /= 10;
+        }
+        return false;
+    }
+
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
@@ -100,6 +109,13 @@ class NumberCodeUsingMethods{
             System.out.println(num+" is DISARIUM NUMBER\n");
         } else {
             System.out.println(num+" is NOT a DISARIUM NUMBER\n");
+        }
+
+        //------------- Method call statement for Duck Number ---------------
+        if(isDuck(num)){
+            System.out.println(num+" is DUCK NUMBER\n");
+        } else {
+            System.out.println(num+" is NOT a DUCK NUMBER\n");
         }
     }
 }
