@@ -89,6 +89,19 @@ class NumberCodeUsingMethods{
     }
 
 
+    public static void Fibonacci(){
+        int n1 = 0, n2 = 1, ans;
+        System.out.print("Fibonacci number between 0 to 100 : ");
+        while(n1 < 100){
+            System.out.print(n1+" ");
+            ans = n1 + n2;
+            n1 = n2;
+            n2 = ans;
+
+        }
+    }
+
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
@@ -138,6 +151,9 @@ class NumberCodeUsingMethods{
         }
 
         //------------- Method call statement for Factorial of Number ---------------
-        System.out.println("Factorial of "+num+" = "+Factorial(num));
+        System.out.println("Factorial of "+num+" = "+Factorial(num)+"\n");
+
+        //------------- Method call statement for Fibonnaci Series ---------------
+        Fibonacci();
     }
 }
