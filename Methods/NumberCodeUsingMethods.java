@@ -123,6 +123,16 @@ class NumberCodeUsingMethods{
 
     }
 
+
+    // Method for Harshad Number
+    public static boolean isHarshadNumber(int num){
+        int sum = 0;
+        for(int i = num; i != 0; i /= 10){
+            sum += num % 10;
+        }
+        return num == sum;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
@@ -182,5 +192,16 @@ class NumberCodeUsingMethods{
         System.out.println();
         int num1 = 12, num2 = 18;
         System.out.println("Highest Common Factor of "+num1+" & "+num2+" : "+GCDorHCF(num1, num2));
+        System.out.println();
+
+        //------------- Method call statement for Harshad Number ---------------
+        int HarshadNo = 81;
+        if(isHarshadNumber(HarshadNo)){
+            System.out.println(HarshadNo+" is HARSHAD NUMBER\n");
+        } else {
+            System.out.println(HarshadNo+" is HARSHAD NUMBER\n");
+        }
+
+
     }
 }
