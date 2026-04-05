@@ -1,3 +1,13 @@
+/*
+
+Harshad Number (Niven Number)
+
+A number that is divisible by the sum of its digits.
+Example:
+18 → 1 + 8 = 9 → 18 ÷ 9 = 2 ✔️
+
+ */
+
 import java.util.Scanner;
 public class HarshadNumber {
     public static void main(String[] args) {
