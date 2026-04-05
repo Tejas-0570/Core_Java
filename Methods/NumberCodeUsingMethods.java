@@ -59,11 +59,13 @@ class NumberCodeUsingMethods{
     }
 
 
+    // Method for Buzz Number
     public static boolean isBuzz(int num){
         return num / 7 == 0 || num % 10 == 7;
     }
 
 
+    // Method for Disarium Number
     public static boolean isDisarium(int num){
         int count = count(num);  // count method is called inside isDisarium method
         int sum = 0;
@@ -75,6 +77,7 @@ class NumberCodeUsingMethods{
     }
 
 
+    // Method for Duck Number
     public static boolean isDuck(int num){
         while(num != 0){  //10345
             if(num % 10 == 0) return true;
@@ -84,11 +87,13 @@ class NumberCodeUsingMethods{
     }
 
 
+    // Method for Even or Odd Number
     public static boolean isEven(int num){
         return num % 2 == 0 ;
     }
 
 
+    // Method for Fibonacci Series
     public static void Fibonacci(){
         int n1 = 0, n2 = 1, ans;
         System.out.print("Fibonacci number between 0 to 100 : ");
@@ -101,6 +106,22 @@ class NumberCodeUsingMethods{
         }
     }
 
+
+    // Method for GCD (Greatest Common Divisor) or HCF (Highest Common Factor)
+    public static int GCDorHCF(int num1, int num2){
+        int small = num1 < num2 ? num1 : num2; // Math.min(num1, num2);
+        if(num1 % small == 0 && num2 % small == 0){
+            return small;
+        }
+        small /= 2;
+        while(true){
+            if(num1 % small == 0 && num2 % small == 0){
+                return small;
+            }
+            small--;
+        }
+
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -155,5 +176,11 @@ class NumberCodeUsingMethods{
 
         //------------- Method call statement for Fibonnaci Series ---------------
         Fibonacci();
+        System.out.println();
+
+        //------------- Method call statement for GCDorHCF --------------------------------
+        System.out.println();
+        int num1 = 12, num2 = 18;
+        System.out.println("Highest Common Factor of "+num1+" & "+num2+" : "+GCDorHCF(num1, num2));
     }
 }
