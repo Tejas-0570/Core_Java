@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="079d8894-485b-4666-abf6-dca9bd89bbea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core_Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Core_Java.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Methods/NumberCodeUsingMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/Methods/NumberCodeUsingMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Numbers/HarshadNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/HarshadNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recursion/Factorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/Recursion/Factorial.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +99,8 @@
       <workItem from="1775166515872" duration="656000" />
       <workItem from="1775241874868" duration="1551000" />
       <workItem from="1775332240564" duration="1707000" />
-      <workItem from="1775418728898" duration="2040000" />
+      <workItem from="1775418728898" duration="2265000" />
+      <workItem from="1775507359454" duration="259000" />
     </task>
     <servers />
   </component>
