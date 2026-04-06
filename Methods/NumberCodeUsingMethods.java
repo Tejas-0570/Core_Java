@@ -139,6 +139,27 @@ class NumberCodeUsingMethods{
         return num1 > num2 && num1 > num3 ? num1 : (num2 > num3 ? num2 : num3);
     }
 
+
+    // Method for Least Common Multiplier
+    public static int LCM(int num1, int num2){
+        int small = num1 < num2 ? num1 : num2;
+        while(true){
+            if(num1 % small == 0 && num2 % small == 0){
+                return small;
+            }
+            else {
+                small /= 2;
+                while(true){
+                    if(num1 % small == 0 && num2 % small == 0){
+                        return small;
+                    }
+                    small--;
+                }
+            }
+        }
+    }
+
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
@@ -209,8 +230,11 @@ class NumberCodeUsingMethods{
         }
 
         //------------- Method call statement for Largest of 3 Number ---------------
-        System.out.println(LargestOfThreeNumber(12, 4, 76));
+        System.out.println("Largest of Three is : "+LargestOfThreeNumber(12, 4, 76));
+        System.out.println();
 
-
+        //------------- Method call statement for LCM ---------------
+        int n1 = 12, n2 = 18;
+        System.out.println("Least Common Multiplier of "+n1+" & "+n2+" is : "+LCM(n1, n2));
     }
 }
