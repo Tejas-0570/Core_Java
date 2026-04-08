@@ -160,6 +160,16 @@ class NumberCodeUsingMethods{
     }
 
 
+    // Method for Neon Number
+    public static boolean isNeon(int num){
+        int sum = 0;
+        for(int i = num*num; i != 0; i /= 10){
+            sum += i % 10;
+        }
+        return num == sum;
+    }
+
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
@@ -236,5 +246,14 @@ class NumberCodeUsingMethods{
         //------------- Method call statement for LCM ---------------
         int n1 = 12, n2 = 18;
         System.out.println("Least Common Multiplier of "+n1+" & "+n2+" is : "+LCM(n1, n2));
+
+        //------------- Method call statement for Neon Number ---------------
+        System.out.println();
+        int Neon = 9;
+        if(isNeon(Neon)){
+            System.out.println(Neon+" is a Neon Number");
+        } else {
+            System.out.println(Neon+" is not a Neon Number");
+        }
     }
 }
