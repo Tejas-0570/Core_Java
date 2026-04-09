@@ -170,6 +170,16 @@ class NumberCodeUsingMethods{
     }
 
 
+    // Method for Palindrome Number
+    public static boolean isPalindrome(int num){
+        int rev = 0;
+        for(int i = num; i != 0; i /= 10){
+            rev = rev * 10 + (i % 10);
+        }
+        return num == rev;
+    }
+
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
@@ -254,6 +264,15 @@ class NumberCodeUsingMethods{
             System.out.println(Neon+" is a Neon Number");
         } else {
             System.out.println(Neon+" is not a Neon Number");
+        }
+
+        //------------- Method call statement for Palindrome Number ---------------
+        System.out.println();
+        int palindrome = 123321;
+        if(isPalindrome(palindrome)){
+            System.out.println(palindrome+" is a Palindrome Number");
+        } else {
+            System.out.println(palindrome+" is not a Palindrome Number");
         }
     }
 }
