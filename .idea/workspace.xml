@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079d8894-485b-4666-abf6-dca9bd89bbea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Static/StaticBlockEx1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Static/StaticInitializers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +104,7 @@
       <workItem from="1775550647889" duration="183000" />
       <workItem from="1775551174947" duration="578000" />
       <workItem from="1775675598128" duration="593000" />
-      <workItem from="1775767438135" duration="741000" />
+      <workItem from="1775767438135" duration="1289000" />
     </task>
     <servers />
   </component>
