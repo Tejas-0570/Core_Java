@@ -190,7 +190,7 @@ class NumberCodeUsingMethods{
     }
 
 
-    //
+    // Method for Peterson Number
     public static boolean isPeterson(int num){
         int factSum = 0, temp = num;
         while(num != 0){
@@ -202,6 +202,18 @@ class NumberCodeUsingMethods{
             num /= 10;
         }
         return factSum == temp;
+    }
+
+
+    // Method for Prime Number
+    public static boolean isPrime(int num){
+        if(num % 2 == 0) return false;
+        for(int i = 3; i < num/2; i++){
+            if(num % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 
@@ -316,6 +328,15 @@ class NumberCodeUsingMethods{
             System.out.println(peterson+" is a Peterson Number");
         } else {
             System.out.println(peterson+" is not a Peterson Number");
+        }
+
+        //------------- Method call statement for Prime Number ---------------
+        System.out.println();
+        int prime = 97;
+        if(isPrime(prime)){
+            System.out.println(prime+" is a Prime Number");
+        } else {
+            System.out.println(prime+" is not a Prime Number");
         }
     }
 }
