@@ -190,6 +190,21 @@ class NumberCodeUsingMethods{
     }
 
 
+    //
+    public static boolean isPeterson(int num){
+        int factSum = 0, temp = num;
+        while(num != 0){
+            int fact = 1;
+            for(int i = num % 10 ; i >= 2; i--){
+                fact *= i;
+            }
+            factSum += fact;
+            num /= 10;
+        }
+        return factSum == temp;
+    }
+
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
@@ -292,6 +307,15 @@ class NumberCodeUsingMethods{
             System.out.println(perfect+" is a Perfect Number");
         } else {
             System.out.println(perfect+" is not a Perfect Number");
+        }
+
+        //------------- Method call statement for Peterson Number ---------------
+        System.out.println();
+        int peterson = 145;
+        if(isPeterson(peterson)){
+            System.out.println(peterson+" is a Peterson Number");
+        } else {
+            System.out.println(peterson+" is not a Peterson Number");
         }
     }
 }
