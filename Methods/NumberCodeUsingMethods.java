@@ -217,6 +217,18 @@ class NumberCodeUsingMethods{
     }
 
 
+    // Method for Spy Number
+    public static boolean isSpy(int num){
+        int sumOfDigit = 0, proOfDigit = 1;
+        while(num != 0){
+            sumOfDigit += (num % 10);
+            proOfDigit *= (num % 10);
+            num /= 10;
+        }
+        return sumOfDigit == proOfDigit;
+
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
@@ -337,6 +349,15 @@ class NumberCodeUsingMethods{
             System.out.println(prime+" is a Prime Number");
         } else {
             System.out.println(prime+" is not a Prime Number");
+        }
+
+        //------------- Method call statement for Spy Number ---------------
+        System.out.println();
+        int spy = 123;
+        if(isSpy(spy)){
+            System.out.println(spy+" is a Spy Number");
+        } else {
+            System.out.println(spy+" is not a Spy Number");
         }
     }
 }
