@@ -1,3 +1,23 @@
+/*
+Ugly Number :
+An Ugly Number is a number whose only prime factors are 2, 3, and 5.
+
+✅ Example 1: 6
+Prime factors → 2 × 3
+✔️ Only contains 2 and 3
+👉 ✅ Ugly Number
+
+✅ Example 2: 30
+Prime factors → 2 × 3 × 5
+✔️ Only contains 2, 3, 5
+👉 ✅ Ugly Number
+
+❌ Example 3: 14
+Prime factors → 2 × 7
+❌ Contains 7 (not allowed)
+👉 ❌ Not an Ugly Number
+ */
+
 import java.util.Scanner;
 public class UglyNumber {
     public static void main(String[] args) {

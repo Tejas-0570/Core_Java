@@ -1,3 +1,13 @@
+/*
+🔹 Magic Number
+
+Keep summing digits until a single digit. If it becomes 1 → Magic Number
+
+Example:
+1729 → 1+7+2+9 = 19 → 1+9 = 10 → 1+0 = 1 ✔️
+
+ */
+
 import java.util.Scanner;
 public class MagicNumber {
     public static void main(String[] args) {

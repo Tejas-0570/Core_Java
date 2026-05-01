@@ -1,3 +1,9 @@
+/*
+Enter a number : 595
+Output : 595 is Odd Number
+ */
+
+
 import java.util.Scanner;
 public class EvenOrOdd {
     public static void main(String[] args){
@@ -19,9 +25,9 @@ public class EvenOrOdd {
         }
 
         if(num % 2 == 0){
-            System.out.println(num+" is a Even Number");
+            System.out.println(num+" is Even Number");
         } else {
-            System.out.println(num+" is a Odd Number");
+            System.out.println(num+" is Odd Number");
         }
     }
 }

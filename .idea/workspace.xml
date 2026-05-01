@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079d8894-485b-4666-abf6-dca9bd89bbea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Numbers/ISBNNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/DigitInAscending.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/DigitInAscending.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/DigitInDescending.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/DigitInDescending.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/EvenOrOdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/EvenOrOdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/ISBNNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/ISBNNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/LargestOfThreeNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/LargestOfThreeNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/MagicNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/MagicNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/PerfectNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/PerfectNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/SmithNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/SmithNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Numbers/UglyNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers/UglyNumber.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

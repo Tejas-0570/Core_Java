@@ -1,3 +1,12 @@
+/*
+Perfect Number
+A number whose sum of factors (excluding itself) equals the number.
+
+Example:
+6 → 1 + 2 + 3 = 6 ✔️
+ */
+
+
 import java.util.Scanner;
 public class PerfectNumber {
     public static void main(String[] args) {

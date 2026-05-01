@@ -1,3 +1,33 @@
+/*
+Smith Number
+
+Composite number where:
+Sum of digits = sum of digits of prime factors
+
+Example: 666
+Step 1: Check composite
+666 is not prime ✔️
+
+Step 2: Sum of digits of number
+6 + 6 + 6 = 18
+
+Step 3: Prime factorization
+666 = 2 × 3 × 3 × 37
+
+Step 4: Sum of digits of factors
+2 → 2
+3 → 3
+3 → 3
+37 → 3 + 7 = 10
+
+Total = 2 + 3 + 3 + 10 = 18
+
+✔️ Final Check
+
+Sum of digits (number) = 18
+Sum of digits (factors) = 18
+ */
+
 import java.util.Scanner;
 
 public class SmithNumber {
@@ -13,7 +43,7 @@ public class SmithNumber {
         int num = sc.nextInt();
         int temp = num;
 
-        // Smith numbers MUST be composite
+        // Smith numbers MUST be composite means must be divisible by any number other than 1 and itself
         if (isPrime(num)) {
             System.out.println(temp + " is Not a Smith Number (Primes are excluded)");
             return;

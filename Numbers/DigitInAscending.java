@@ -1,3 +1,8 @@
+/*
+Enter a Number excluding zero : 4852541485
+Output : 1244455588
+ */
+
 import java.util.Scanner;
 public class DigitInAscending {
     public static void main(String[] args) {

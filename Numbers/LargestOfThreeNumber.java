@@ -1,3 +1,10 @@
+/*
+Enter first number : 95
+Enter second number : 65
+Enter third number : 26
+Output : 95
+ */
+
 import java.util.Scanner;
 public class LargestOfThreeNumber {
     public static void main(String[] args) {

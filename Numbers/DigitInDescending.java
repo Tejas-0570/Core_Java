@@ -1,3 +1,9 @@
+/*
+Enter a Number : 14454684125
+Output : 86554444211
+ */
+
+
 import java.util.Scanner;
 public class DigitInDescending {
     public static void main(String[] args) {
