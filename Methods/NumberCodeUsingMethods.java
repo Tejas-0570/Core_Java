@@ -240,6 +240,17 @@ class NumberCodeUsingMethods{
         return num == factsum;
     }
 
+
+    // Method for Trimorphic Number
+    public static boolean isTrimorphic(int num){
+        int pow = 1, temp = num;
+        while(temp != 0){
+            pow *= 10;
+            temp /= 10;
+        }
+        return num == (num * num * num) % pow;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
@@ -378,6 +389,15 @@ class NumberCodeUsingMethods{
             System.out.println(strong+" is a Strong Number");
         } else {
             System.out.println(strong+" is not a Strong Number");
+        }
+
+        //------------- Method call statement for Trimorphic Number ---------------
+        System.out.println();
+        int trimorphic = 4;
+        if(isTrimorphic(trimorphic)){
+            System.out.println(trimorphic+" is a Trimorphic Number");
+        } else {
+            System.out.println(trimorphic+" is not a Trimorphic Number");
         }
     }
 }
