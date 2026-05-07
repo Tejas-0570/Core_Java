@@ -229,6 +229,17 @@ class NumberCodeUsingMethods{
 
     }
 
+
+    // Method for Strong Number
+    public static boolean isStrong(int num){
+        int factsum = 0, temp = num;
+        while(temp != 0){
+            factsum = factsum + Factorial(temp % 10);
+            temp /= 10;
+        }
+        return num == factsum;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
@@ -358,6 +369,15 @@ class NumberCodeUsingMethods{
             System.out.println(spy+" is a Spy Number");
         } else {
             System.out.println(spy+" is not a Spy Number");
+        }
+
+        //------------- Method call statement for Strong Number ---------------
+        System.out.println();
+        int strong = 145;
+        if(isStrong(strong)){
+            System.out.println(strong+" is a Strong Number");
+        } else {
+            System.out.println(strong+" is not a Strong Number");
         }
     }
 }
