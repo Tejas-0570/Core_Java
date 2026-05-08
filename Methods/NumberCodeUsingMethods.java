@@ -399,5 +399,20 @@ class NumberCodeUsingMethods{
         } else {
             System.out.println(trimorphic+" is not a Trimorphic Number");
         }
+
+        //------------- Twin Prime Number ---------------
+        System.out.println();
+        //int twinPrime1 = 11, twinPrime2 = 13;
+        System.out.print("Enter first number for twin prime : ");
+        int twinPrime1 = sc.nextInt();
+        System.out.println();
+        System.out.print("Enter second number for twin prime : ");
+        int twinPrime2 = sc.nextInt();
+
+        if((Math.abs(twinPrime1 - twinPrime2) == 2) && isPrime(twinPrime1) && isPrime(twinPrime2)){
+            System.out.println(twinPrime1+" & "+twinPrime2+" is a Trimorphic Number");
+        } else {
+            System.out.println(twinPrime1+" & "+twinPrime2+" is not a Trimorphic Number");
+        }
     }
 }
