@@ -24,6 +24,14 @@ class NumberCodeUsingMethods{
         }
         return fact;
     }
+    public static int Reverse(int num){
+        int rev = 0;
+        while(num != 0){
+            rev = rev * 10 + (num % 10);
+            num /= 10;
+        }
+        return rev;
+    }
 //------------------------------------------------------------------------------------------------------------
     // Method for Armstrong Number
     public static boolean isArmStrong(int n){
@@ -413,6 +421,17 @@ class NumberCodeUsingMethods{
             System.out.println(twinPrime1+" & "+twinPrime2+" is a Trimorphic Number");
         } else {
             System.out.println(twinPrime1+" & "+twinPrime2+" is not a Trimorphic Number");
+        }
+
+        //------------- Twisted Prime Number ---------------
+        System.out.println();
+        System.out.print("Enter a number for twisted prime : ");
+        int twistedPrime = sc.nextInt();
+        if(isPrime(twistedPrime) && isPrime(Reverse(twistedPrime))){
+            System.out.println(twistedPrime+" is a Twisted Prime Number");
+        }
+        else {
+            System.out.println(twistedPrime+" is not a Twisted Prime Number");
         }
     }
 }
