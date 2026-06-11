@@ -1,3 +1,9 @@
+/*
+Find Maximum and Minimum
+Find both the maximum and minimum element in an array in a single pass.
+Input: [3, 1, 9, 2, 7, 5] Output: Max=9, Min=1
+ */
+
 public class MaxMin {
     public static void main(String[] args) {
         int[] arr = {3, 1, 9, 2, 7, 5};
