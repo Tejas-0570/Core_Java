@@ -6,6 +6,7 @@ the resulting number contains all digits from 1 to 9 exactly once.
 ✅ Example: 192
 
 Check:
+192 * 1 = 192
 192 × 2 = 384
 192 × 3 = 576
 
