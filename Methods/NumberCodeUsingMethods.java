@@ -259,6 +259,19 @@ class NumberCodeUsingMethods{
         return num == (num * num * num) % pow;
     }
 
+
+    // Method for Ugly Number
+    public static boolean isUgly(int num){
+        while (num > 1){
+            if(num % 2 == 0) num /= 2;
+            else if (num % 3 == 0) num /= 3;
+            else if (num % 5 == 0) num /= 5;
+            else break;
+        }
+        return num == 1;
+
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number : ");
@@ -418,9 +431,9 @@ class NumberCodeUsingMethods{
         int twinPrime2 = sc.nextInt();
 
         if((Math.abs(twinPrime1 - twinPrime2) == 2) && isPrime(twinPrime1) && isPrime(twinPrime2)){
-            System.out.println(twinPrime1+" & "+twinPrime2+" is a Trimorphic Number");
+            System.out.println(twinPrime1+" & "+twinPrime2+" are a Twin Prime Number");
         } else {
-            System.out.println(twinPrime1+" & "+twinPrime2+" is not a Trimorphic Number");
+            System.out.println(twinPrime1+" & "+twinPrime2+" are not a Twin Prime Number");
         }
 
         //------------- Twisted Prime Number ---------------
@@ -432,6 +445,17 @@ class NumberCodeUsingMethods{
         }
         else {
             System.out.println(twistedPrime+" is not a Twisted Prime Number");
+        }
+
+        //------------- Ugly Number ---------------
+        System.out.println();
+        System.out.print("Enter a number : ");
+        int ugly = sc.nextInt();
+        if(isUgly(ugly)){
+            System.out.println(ugly+" is a Ugly Number");
+        }
+        else {
+            System.out.println(ugly+" is not a Ugly Number");
         }
     }
 }
