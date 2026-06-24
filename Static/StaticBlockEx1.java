@@ -25,9 +25,9 @@ From Main Method
 
 Before the actual execution start static blocks get executed/ OR
 During class loading process static blocks gets executed
-(class loading process done before actual execution. Actual execution start from main() method)
+( class loading process done before actual execution. Actual execution start from main() method )
 
-Definition :
+Definition :vg
 In Java, a static block (also known as a static initialization block)
 is a block of code enclosed in curly braces and preceded by the static keyword.
 It is used primarily for the one-time initialization of static variables or to
