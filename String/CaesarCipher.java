@@ -41,6 +41,5 @@ public class CaesarCipher {
             }
         }
         System.out.println(encrypted);
-
     }
 }
