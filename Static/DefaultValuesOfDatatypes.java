@@ -3,7 +3,7 @@ Byte : 0
 Short : 0
 Int : 0
 Float : 0.0
-Char :
+Char : '\u0000'
 Long : 0
 Double : 0.0
 Boolean : false
