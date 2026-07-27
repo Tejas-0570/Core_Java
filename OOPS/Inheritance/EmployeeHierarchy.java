@@ -14,9 +14,11 @@ package Inheritance;
 public class EmployeeHierarchy {
     public static void main(String[] args) {
         Manager m = new Manager("Amit", 50000, 5);
-        m.displayInfo();
-
         Developer d = new Developer("Sara", 45000, "MERN");
+
+        System.out.println("------------------------- Manager -------------------------");
+        m.displayInfo();
+        System.out.println("------------------------- Developer -------------------------");
         d.displayInfo();
     }
 }
