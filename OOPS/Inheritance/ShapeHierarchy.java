@@ -27,8 +27,8 @@ public class ShapeHierarchy {
 }
 
 abstract class Shape{
-    public String color;
-    public String name;
+    protected String color;
+    protected String name;
     Shape(String color, String name){
         this.color = color;
         this.name = name;
