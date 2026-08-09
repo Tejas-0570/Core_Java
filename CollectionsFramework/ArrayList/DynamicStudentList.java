@@ -12,6 +12,7 @@ Final list: [Raj, Sara, Ali, John, Priya]
 Array attempt: ArrayIndexOutOfBoundsException at index 3 ← WHY ArrayList
 
 Skills: add(), do-while, dynamic growth vs fixed array, ArrayIndexOutOfBoundsException
+Hint Present at bottom ------->
 
  */
 
@@ -66,3 +67,16 @@ public class DynamicStudentList {
 
     }
 }
+
+
+/*
+Step 1 — ArrayList part: Create ArrayList<String> students = new ArrayList<>(). Use sc.nextLine() to read names —
+not sc.next() since names can have spaces. Use a do-while loop asking "Add more? (y/n)" — keep calling students.
+add(name) as long as user says y. No size limit at all — this is ArrayList's core power.
+
+Step 2 — Array part: Create String[] arr = new String[3]. Try to add a 4th element at index 3 — it throws ArrayIndexOutOfBoundsException.
+Show this crash in a try-catch block so program doesn't die. Print "This is why we use ArrayList — it grows automatically."
+
+Key concept: Array has fixed size decided at creation time. ArrayList internally uses an array but creates a new bigger array
+and copies elements automatically when it runs out of space. You never manage size manually.
+ */
