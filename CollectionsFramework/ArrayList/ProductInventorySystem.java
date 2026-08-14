@@ -18,18 +18,24 @@ package ArrayList;
 import java.util.ArrayList;
 public class ProductInventorySystem {
     public static void main(String[] args) {
-        ArrayList<Product> products = new ArrayList<>();
-        Product p1 = new Product("Laptop", 75000, 5);
-        Product p2 = new Product("Phone", 25000, 3);
-        products.add(0, p1);
-        products.add(1, p2);
+        Inventory inventory = new Inventory();
+
+        inventory.addProduct(new Product("Laptop", 75000, 5));
+        inventory.addProduct(new Product("Phone", 25000, 10));
+        inventory.addProduct(new Product("Tablet", 30000, 3));
+
+        inventory.removeByName("Tablet");
+        inventory.searchByName("Phone");
+        inventory.updatePrice("Phone", 20000);
+        inventory.displayAll();
     }
+
 }
 
 class Product{
-    final String name;
-    int price;
-    int quantity;
+    private final String name;
+    private int price;
+    private int quantity;
 
     Product(String name, int price, int quantity){
         this.name = name;
@@ -37,10 +43,98 @@ class Product{
         this.quantity = quantity;
     }
 
-    @Override
-    public String toString() {
-        return "Product{name='" + name + "', price=" + price + ", quantity=" + quantity + "}";
+//  -------------- Getters ------------------
+    public String getName(){
+        return name;
     }
+    public int getPrice(){
+        return price;
+    }
+    public int getQuantity(){
+        return quantity;
+    }
+//  ------------- Setters ----------------------
+    public void setPrice(int price){
+        this.price = price;
+    }
+    public void setQuantity(int quantity){
+        this.quantity = quantity;
+    }
+
+//  ----------------- Concrete method ------------------
+    public void display(){
+        System.out.println("Name: "+name+" | Price: "+price+" | Quantity: "+quantity);
+    }
+
+}
+
+class Inventory{
+    private ArrayList<Product> products = new ArrayList<>();
+
+    public void addProduct(Product p){
+        products.add(p);
+        System.out.println("Product added successfully");
+    }
+
+    public void removeByName(String name){
+        int index = FindIndexByName(name);
+        if(index == -1){
+            System.out.println(name+" is not found");
+            return;
+        }
+        products.remove(index);
+        System.out.println(name+" removed successfully");
+    }
+
+    public void updatePrice(String name, int newPrice){
+        Product p = FindByName(name);
+        if(p == null){
+            System.out.println(name+" not found");
+            return;
+        }
+        p.setPrice(newPrice);
+        System.out.println(p.getName()+" updated price is "+p.getPrice());
+    }
+
+    public void searchByName(String name){
+        int index = FindIndexByName(name);
+        if(index == -1){
+            System.out.println(name+" not found");
+            return;
+        }
+        Product p = products.get(index);
+        System.out.println("Found at index "+index+" --> "+"Name: "+p.getName()+" | Price: "+p.getPrice()+" | Quantity: "+p.getQuantity());
+    }
+
+    public void displayAll(){
+        for(Product p : products){
+            p.display();
+        }
+    }
+
+    public int total(){
+        int total = 0;
+        for(Product p : products){
+            total += p.getPrice() * p.getQuantity();
+        }
+        return total;
+    }
+
+
+    public int FindIndexByName(String name){
+        for(int i = 0; i < products.size(); i++){
+            if(products.get(i).getName().equals(name)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public Product FindByName(String name){
+        int index = FindIndexByName(name);
+        return index == -1 ? null : products.get(index);
+    }
+
 }
 
 
