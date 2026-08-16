@@ -16,9 +16,108 @@ Hint at bottom -->
 
 package ArrayList;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class EmployeeSalarySorter {
     public static void main(String[] args) {
+        Employees emp = new Employees();
 
+        emp.addEmployee(new Employee("Raj", "IT", 55000));
+        emp.addEmployee(new Employee("Sara", "HR", 72000));
+        emp.addEmployee(new Employee("Ali", "IT", 48000));
+        emp.addEmployee(new Employee("John", "HR", 61000));
+
+        System.out.println("------------- Before Sorting ----------------");
+        emp.displayAll();
+
+        System.out.println("\n--------------------- After sorting based on Salary ---------------------");
+        emp.sortBySalary();
+        emp.displayAll();
+
+        System.out.println("\n------------------ After sorting based on names ---------------------");
+        emp.sortByName();
+        emp.displayAll();
+
+        System.out.println("\n-------------------- After sorting based on Dept and Salary --------------------");
+        emp.sortByDeptAndSalary();
+        emp.displayAll();
+    }
+}
+
+class Employee implements Comparable<Employee>{
+    private String name;
+    private String department;
+    private int salary;
+
+    Employee(String name, String department, int salary){
+        this.name = name;
+        this.department = department;
+        this.salary = salary;
+    }
+
+//  ------------------ Getters ---------------------
+    public String getName(){
+        return name;
+    }
+    public String getDepartment(){
+        return department;
+    }
+    public int getSalary(){
+        return salary;
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return this.salary - o.salary;
+    }
+
+    public void display(){
+        System.out.println(name+"-"+department+"-"+salary);
+    }
+
+
+}
+
+class Employees{
+    ArrayList<Employee> employees = new ArrayList<>();
+
+    public void addEmployee(Employee e){
+        employees.add(e);
+    }
+
+    public void sortBySalary(){
+        Collections.sort(employees);
+    }
+
+    public void sortByName(){
+        Collections.sort(employees, new Comparator<Employee>(){
+            @Override
+            public int compare(Employee a, Employee b){
+                return a.getName().compareTo(b.getName());
+            }
+        });
+
+    }
+
+    public void sortByDeptAndSalary(){
+        Collections.sort(employees, new Comparator<Employee>(){
+            @Override
+            public int compare(Employee a, Employee b){
+                int deptCom = a.getDepartment().compareTo(b.getDepartment());
+                if(deptCom != 0){
+                    return deptCom;
+                }
+                return a.getSalary() - b.getSalary();
+            }
+        });
+    }
+
+    public void displayAll(){
+        for (Employee e : employees){
+            e.display();
+        }
     }
 }
 
