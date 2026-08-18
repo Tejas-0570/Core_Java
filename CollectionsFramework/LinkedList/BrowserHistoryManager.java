@@ -5,11 +5,11 @@ Browser history manager
 
 Build a browser history using LinkedList. User visits pages — each new page adds to the front (most recent first).
 Options: visit page, go back (remove from front), show full history, show current page (peek front). No shifting of elements ever.
-
+----------------------------------------------------------------------------------------------------------------
 Why LinkedList not ArrayList: Every new page visit inserts at front. In ArrayList, add(0, page) shifts ALL
 existing pages right — the more history you have, the slower it gets. LinkedList just creates a new node and
 points it to the old front — O(1) always, no shifting ever.
-
+----------------------------------------------------------------------------------------------------------------
 visit("google.com") → [google.com]
 visit("youtube.com") → [youtube.com, google.com]
 visit("github.com") → [github.com, youtube.com, google.com]
