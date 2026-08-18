@@ -22,9 +22,50 @@ Hint at bottom -->
 
 package LinkedList;
 
+import java.util.LinkedList;
+import java.util.NoSuchElementException;
+
 public class BrowserHistoryManager {
     public static void main(String[] args) {
+        HistoryManager hm = new HistoryManager();
 
+        hm.visitPage("google.com");
+        hm.visitPage("youtube.com");
+        hm.visitPage("github.com");
+
+        hm.goBack();
+
+        hm.showHistory();
+
+        hm.currentPage();
+    }
+}
+
+class HistoryManager{
+    LinkedList<String> history = new LinkedList<>();
+
+    public void visitPage(String website){
+        history.addFirst(website);
+    }
+
+    public void goBack(){
+        try{
+            history.removeFirst();
+        } catch (NoSuchElementException e){
+            System.out.println("Exception: "+e);
+        }
+    }
+
+    public void showHistory(){
+        System.out.println(history);
+    }
+
+    public void currentPage(){
+        try{
+            System.out.println("Current page: "+history.getFirst());
+        } catch (NoSuchElementException e){
+            System.out.println("Exception: "+e);
+        }
     }
 }
 
