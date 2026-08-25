@@ -22,9 +22,104 @@ Hint at bottom -->
 
 package LinkedList;
 
+import java.util.LinkedList;
+import java.util.ListIterator;
+
 public class ExamQuestionNavigator {
     public static void main(String[] args) {
+        ExamQuestions eq = new ExamQuestions();
 
+        eq.addQuestion("Q1");
+        eq.addQuestion("Q2");
+        eq.addQuestion("Q3");
+
+        eq.current();          // Current: Q1
+
+        eq.nextQuestion();     // Next Question: Q2
+        eq.nextQuestion();     // Next Question: Q3
+        eq.current();          // Current: Q3
+
+        eq.removeCurrent(); // Remove Q3
+
+        eq.previous();         // Previous: Q2
+        eq.current();          // Current: Q2
+
+        eq.addAtCurrent("Q2.5");  // inserted between Q2 and Q3
+        eq.displayAll();
+
+        eq.nextQuestion();     // Next Question: Q2.5
+        eq.nextQuestion();     // Next Question: Q3
+
+        eq.demonstrateIllegalState();  // shows IllegalStateException
+    }
+}
+
+class ExamQuestions {
+    LinkedList<String> questions = new LinkedList<>();
+    int currentIndex = 0;
+
+    public void addQuestion(String question){
+        questions.addLast(question);
+        System.out.println("Question " + question + " added");
+    }
+
+    public void nextQuestion(){
+        if(currentIndex < questions.size() - 1){
+            currentIndex++;
+            System.out.println("Next Question: " + questions.get(currentIndex));
+        } else {
+            System.out.println("No Next");
+        }
+    }
+
+    public void previous(){
+        if(currentIndex > 0){
+            currentIndex--;
+            System.out.println("Previous: " + questions.get(currentIndex));
+        } else {
+            System.out.println("No Previous");
+        }
+    }
+
+    public void current(){
+        if(questions.isEmpty()){
+            System.out.println("Exam Questions are empty");
+            return;
+        }
+        System.out.println("Current: " + questions.get(currentIndex));
+    }
+
+    public void addAtCurrent(String newQuestion){
+        ListIterator<String> it = questions.listIterator(currentIndex + 1);
+        it.add(newQuestion);
+        System.out.println(newQuestion + " inserted after " + questions.get(currentIndex));
+    }
+
+    public void removeCurrent(){
+        if(questions.isEmpty()){
+            System.out.println("Nothing to remove");
+            return;
+        }
+        ListIterator<String> it = questions.listIterator(currentIndex + 1);
+        it.previous();   // MUST call next()/previous() before remove() — this selects the current element
+        it.remove();
+        System.out.println("Removed current question");
+        if(currentIndex >= questions.size() && currentIndex > 0){
+            currentIndex--;   // clamp back into range if we removed the last element
+        }
+    }
+
+    public void demonstrateIllegalState(){
+        ListIterator<String> it = questions.listIterator();
+        try {
+            it.remove();   // no next()/previous() called yet — illegal
+        } catch (IllegalStateException e){
+            System.out.println("Caught: " + e + " — you must call next()/previous() before remove()/set()");
+        }
+    }
+
+    public void displayAll(){
+        System.out.println("All questions: " + questions);
     }
 }
 
