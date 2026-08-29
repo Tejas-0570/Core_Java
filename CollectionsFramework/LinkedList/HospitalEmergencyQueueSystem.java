@@ -22,10 +22,80 @@ Hint at bottom -->
 
 package LinkedList;
 
+import java.util.LinkedList;
+import java.util.ListIterator;
+
 public class HospitalEmergencyQueueSystem {
     public static void main(String[] args) {
+        Patient p1 = new Patient("Raj", 3);
+        Patient p2 = new Patient("Sara", 2);
+        Patient p3 = new Patient("Ali", 1);
+        Patient p4 = new Patient("John", 1);
 
+        EmergencyRoom er = new EmergencyRoom();
+        er.admit(p1);
+        er.admit(p2);
+        er.admit(p3);
+        er.admit(p4);
+
+        er.remove("Sara");
+
+        er.display();
     }
+}
+
+class Patient{
+    private String name;
+    private int severity;
+
+    Patient(String name, int severity){
+        this.name = name;
+        this.severity = severity;
+    }
+
+    public String getName(){
+        return name;
+    }
+    public int getSeverity(){
+        return severity;
+    }
+}
+
+class EmergencyRoom{
+    LinkedList<Patient> patientList = new LinkedList<>();
+
+    public void admit(Patient newPatient){
+        ListIterator<Patient> it = patientList.listIterator();
+        while(it.hasNext()){
+            Patient p = it.next();
+            if(p.getSeverity() > newPatient.getSeverity()){
+                it.previous();
+                it.add(newPatient);
+                return;
+            }
+        }
+        it.add(newPatient);
+    }
+
+    public void remove(String name){
+        ListIterator<Patient> it = patientList.listIterator();
+        while(it.hasNext()){
+            Patient p = it.next();
+            if(p.getName().equals(name)){
+                it.remove();
+                System.out.println("Removed");
+                return;
+            }
+        }
+        System.out.println("No such name found in List");
+    }
+
+    public void display(){
+        for (Patient p : patientList) {
+            System.out.println("Name :" + p.getName() + " | Severity: " + (p.getSeverity() == 1 ? "CRITICAL" : (p.getSeverity() == 2 ? "SERIOUS" : "NORMAL")));
+        }
+    }
+
 }
 
 
