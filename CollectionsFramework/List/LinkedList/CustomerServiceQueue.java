@@ -20,7 +20,7 @@ Skills: offer(), poll(), peek(), FIFO concept, queue behavior, position search
 Hint at bottom -->
  */
 
-package LinkedList;
+package List.LinkedList;
 
 import java.util.LinkedList;
 

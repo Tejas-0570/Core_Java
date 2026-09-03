@@ -15,7 +15,7 @@ Skills: Collections.max/min/frequency/sort/reverse/shuffle/nCopies, subList(), c
 Hint at bottom -->
  */
 
-package ArrayList;
+package List.ArrayList;
 import java.util.ArrayList;
 import java.util.Collections;
 

@@ -15,7 +15,7 @@ Skills: autoboxing, Arrays.asList(), toArray(), fixed-size list, when array beat
 Hint at bottom -->
  */
 
-package ArrayList;
+package List.ArrayList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -13,7 +13,7 @@ Skills: Iterator safe removal, ConcurrentModificationException, removeIf(), cont
 Hint at bottom -->
  */
 
-package ArrayList;
+package List.ArrayList;
 import java.util.*;
 public class AttendanceCleaner {
     public static void main(String[] args) {

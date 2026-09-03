@@ -12,6 +12,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Array" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OOPS" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OOPS/ObjectAndClass" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ExceptionHandling" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Multithreading" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CollectionsFramework" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

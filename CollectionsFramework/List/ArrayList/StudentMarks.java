@@ -15,7 +15,7 @@ Skills: get(i), for-each, Iterator, hasNext(), next(), it.remove(), ConcurrentMo
 Hint present at bottom --->
  */
 
-package ArrayList;
+package List.ArrayList;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;

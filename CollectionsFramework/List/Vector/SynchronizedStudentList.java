@@ -25,7 +25,7 @@ Skills: addElement(), elementAt(), capacity() vs size(), firstElement(), lastEle
 Hint at bottom --->
  */
 
-package Vector;
+package List.Vector;
 
 import java.util.ArrayList;
 import java.util.Vector;

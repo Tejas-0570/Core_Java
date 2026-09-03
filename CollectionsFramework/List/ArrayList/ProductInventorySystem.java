@@ -14,7 +14,7 @@ Skills: ArrayList<Object>, remove(int) vs remove(Object), search by field, updat
 
  */
 
-package ArrayList;
+package List.ArrayList;
 import java.util.ArrayList;
 public class ProductInventorySystem {
     public static void main(String[] args) {

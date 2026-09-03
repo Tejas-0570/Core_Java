@@ -19,7 +19,7 @@ Skills: push(), pop(), peek(), LIFO concept, stack behavior, text state tracking
 Hint at bottom -->
  */
 
-package LinkedList;
+package List.LinkedList;
 
 import java.util.LinkedList;
 

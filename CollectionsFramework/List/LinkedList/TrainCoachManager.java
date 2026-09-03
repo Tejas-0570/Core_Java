@@ -20,7 +20,7 @@ Skills: indexOf(), add(index, element), remove(Object), ListIterator, middle ins
 Hint at bottom -->
  */
 
-package LinkedList;
+package List.LinkedList;
 
 import java.util.LinkedList;
 import java.util.ListIterator;

@@ -14,7 +14,7 @@ Skills: Comparable, compareTo(), Comparator, compare(), Collections.sort() with 
 Hint at bottom -->
  */
 
-package ArrayList;
+package List.ArrayList;
 
 import java.util.ArrayList;
 import java.util.Collections;

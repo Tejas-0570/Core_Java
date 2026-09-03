@@ -16,7 +16,7 @@ Hint present at bottom -->
 
  */
 
-package ArrayList;
+package List.ArrayList;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class PriorityTaskManager {

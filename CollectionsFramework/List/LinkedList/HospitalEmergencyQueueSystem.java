@@ -20,7 +20,7 @@ Skills: priority insertion, ListIterator add at position, Patient object, severi
 Hint at bottom -->
  */
 
-package LinkedList;
+package List.LinkedList;
 
 import java.util.LinkedList;
 import java.util.ListIterator;

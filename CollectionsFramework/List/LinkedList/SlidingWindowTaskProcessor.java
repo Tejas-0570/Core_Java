@@ -20,7 +20,7 @@ Skills: Deque concept, addLast(), removeFirst(), peekFirst(), peekLast(), size()
 Hint at bottom --->
  */
 
-package LinkedList;
+package List.LinkedList;
 import java.util.Iterator;
 import java.util.LinkedList;
 public class SlidingWindowTaskProcessor {

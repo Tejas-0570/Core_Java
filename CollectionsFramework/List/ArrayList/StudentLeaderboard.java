@@ -14,7 +14,7 @@ Skills: Collections.sort(), Collections.reverseOrder(), binarySearch(), parallel
 Hint at bottom -->
  */
 
-package ArrayList;
+package List.ArrayList;
 import java.util.*;
 public class StudentLeaderboard {
     public static void main(String[] args) {

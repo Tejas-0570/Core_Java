@@ -20,7 +20,7 @@ Skills: addFirst(), removeFirst(), peekFirst(), addLast(), isEmpty(), Deque natu
 Hint at bottom -->
  */
 
-package LinkedList;
+package List.LinkedList;
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;

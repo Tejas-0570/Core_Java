@@ -17,7 +17,7 @@ Hint Present at bottom ------->
  */
 
 
-package ArrayList;
+package List.ArrayList;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class DynamicStudentList {

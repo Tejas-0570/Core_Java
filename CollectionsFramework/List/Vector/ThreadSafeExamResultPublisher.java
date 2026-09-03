@@ -24,7 +24,7 @@ Skills: shared Vector across threads, compound operation atomicity problem, Coll
 Hint at bottom --->
  */
 
-package Vector;
+package List.Vector;
 
 import java.util.ArrayList;
 import java.util.Collections;

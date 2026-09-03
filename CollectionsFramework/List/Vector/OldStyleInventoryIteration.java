@@ -23,7 +23,7 @@ Skills: Enumeration, elements(), hasMoreElements(), nextElement(), Enumeration v
 Hint at bottom --->
  */
 
-package Vector;
+package List.Vector;
 
 import java.util.Enumeration;
 import java.util.Iterator;

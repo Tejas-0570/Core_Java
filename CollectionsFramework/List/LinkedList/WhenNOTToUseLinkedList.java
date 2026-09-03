@@ -20,7 +20,7 @@ Skills: empirical comparison, cache efficiency concept, getRank by index, Collec
 Hint at bottom --->
  */
 
-package LinkedList;
+package List.LinkedList;
 
 import java.util.ArrayList;
 import java.util.Collections;

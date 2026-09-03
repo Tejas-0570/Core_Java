@@ -20,7 +20,7 @@ Skills: ListIterator, hasPrevious(), previous(), it.add(), it.set(), bidirection
 Hint at bottom -->
  */
 
-package LinkedList;
+package List.LinkedList;
 
 import java.util.LinkedList;
 import java.util.ListIterator;

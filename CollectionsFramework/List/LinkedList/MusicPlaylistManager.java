@@ -20,7 +20,7 @@ Hint at bottom --->
  */
 
 
-package LinkedList;
+package List.LinkedList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
