@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="079d8894-485b-4666-abf6-dca9bd89bbea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CollectionsFramework/List/Stack/PostfixCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/ArrayList/ArrayListLimitations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/ArrayList/AttendanceCleaner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/ArrayList/DynamicStudentList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/ArrayList/EmployeeSalarySorter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/ArrayList/ExamResultAnalyser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/ArrayList/PriorityTaskManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/ArrayList/ProductInventorySystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/ArrayList/ShoppingCartManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/ArrayList/StudentLeaderboard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/ArrayList/StudentMarks.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/LinkedList/BrowserHistoryManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/LinkedList/CustomerServiceQueue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/LinkedList/ExamQuestionNavigator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/LinkedList/HospitalEmergencyQueueSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/LinkedList/MusicPlaylistManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/LinkedList/PerformanceBattle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/LinkedList/SlidingWindowTaskProcessor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/LinkedList/TrainCoachManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/LinkedList/UndoRedoSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectionsFramework/LinkedList/WhenNOTToUseLinkedList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core_Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Core_Java.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
