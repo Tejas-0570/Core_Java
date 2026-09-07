@@ -27,19 +27,55 @@ Hint at bottom -->
 
 package List.Stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 public class WordAndSentenceReverser {
     public static void main(String[] args) {
-        Stack<String> words = new Stack<>();
+        Stack<String> wordStack = new Stack<>();
 
-        words.push("Hello");
-        words.push("World");
-        words.push("Java");
+        String input = "Hello World Java";
+        System.out.println("Input : "+input);
 
-        for(String s: words){
-            System.out.println(s);
+
+        String[] words = input.split(" ");
+
+        for(String w : words){
+            wordStack.push(w);
         }
+        System.out.println("Search : "+wordStack.search("Java"));
+
+        StringBuilder result = new StringBuilder();
+        while(!wordStack.isEmpty()){
+            result.append(wordStack.pop()).append(" ");
+        }
+        System.out.println("Reverse : "+result);
+
+        Stack<Character> charStack = new Stack<>();
+        for(Character s : input.toCharArray()){
+            charStack.push(s);
+        }
+
+        System.out.print("Char Reverse: ");
+        while(!charStack.isEmpty()){
+            System.out.print(charStack.pop());
+        }
+
+
+        System.out.println("\n--- ArrayDeque equivalent ---");
+        Deque<String> wordDeque = new ArrayDeque<>();
+        for(String w : words){
+            wordDeque.push(w);
+        }
+        StringBuilder deqResult = new StringBuilder();
+        while(!wordDeque.isEmpty()){
+            deqResult.append(wordDeque.pop()).append(" ");
+        }
+        System.out.println("Reverse (ArrayDeque): " + deqResult.toString().trim());
+
+// wordDeque.search("Java");  // does NOT exist on ArrayDeque/Deque — Stack-only method
+        System.out.println("Contains 'Java'? " + wordDeque.contains("Java"));  // ArrayDeque's alternative
     }
 }
 
