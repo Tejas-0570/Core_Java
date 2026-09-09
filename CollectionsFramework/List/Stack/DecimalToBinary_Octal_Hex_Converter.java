@@ -26,9 +26,74 @@ Hint at bottom --->
 
 package List.Stack;
 
+import java.util.Stack;
+import java.util.Scanner;
+
 public class DecimalToBinary_Octal_Hex_Converter {
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number to be convert: ");
+        int num = sc.nextInt();
+
+        System.out.println(binary(num));
+        System.out.println(octal(num));
+        System.out.println(hexadecimal(num));
+    }
+
+    public static StringBuilder binary(int num){
+        Stack<Integer> stack = new Stack<>();
+        if(num == 0){
+            return new StringBuilder("0");
+        }
+        while(num != 0){
+            stack.push(num % 2);
+            num /= 2;
+        }
+        StringBuilder result = new StringBuilder();
+        while(!stack.isEmpty()){
+            result.append(stack.pop());
+        }
+        return result;
+    }
+
+    public static StringBuilder octal(int num){
+        Stack<Integer> binaryNum = new Stack<>();
+        if(num == 0){
+            return new StringBuilder("0");
+        }
+        while(num != 0){
+            int rem = num % 8;
+            binaryNum.push(rem);
+
+            num/=8;
+        }
+
+        StringBuilder result = new StringBuilder();
+        while(!binaryNum.isEmpty()){
+            result.append(binaryNum.pop());
+        }
+
+
+        return result;
+    }
+
+    public static StringBuilder hexadecimal(int num){
+        String hexDigits = "0123456789ABCDEF";
+        Stack<String> hexStack = new Stack<>();
+        if(num == 0){
+            return new StringBuilder("0");
+        }
+        while(num != 0){
+            hexStack.push(String.valueOf(hexDigits.charAt(num % 16)));
+            num /= 16;
+        }
+
+        StringBuilder result = new StringBuilder();
+        while(!hexStack.isEmpty()){
+            result.append(hexStack.pop());
+        }
+        return result;
     }
 }
 
