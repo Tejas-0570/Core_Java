@@ -3,7 +3,7 @@
 -----------------------------------------------------------------------------------------------------------------------------------
 Postfix (Reverse Polish Notation) calculator
 
-Evaluate a postfix expression like "5 3 + 2 *" which means (5+3)*2=16. In postfix, operators come AFTER operands — no brackets needed.
+Evaluate a postfix expression like 5" which means (5+3)*2=16. In postfix, operators come AFTER operands — no brackets needed.
 Algorithm: scan left to right, push numbers onto stack, when operator found pop two numbers, apply operator, push result back.
 This is how compilers evaluate expressions internally.
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -29,9 +29,77 @@ Hint at bottom --->
 
 package List.Stack;
 
+import java.util.Scanner;
+import java.util.Stack;
+
 public class PostfixCalculator {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter an expression (e.g. 5 3 + 2 *) : ");
+        String expression = sc.nextLine();
 
+        try {
+            int result = evaluate(expression);
+            System.out.println("Result: " + result);
+        } catch (IllegalArgumentException | ArithmeticException e){
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public static int evaluate(String expression){
+        Stack<Integer> stack = new Stack<>();
+        String[] tokens = expression.trim().split("\\s+");
+
+        for(String token : tokens){
+            if(isOperator(token)){
+                if(stack.size() < 2){
+                    throw new IllegalArgumentException("Invalid postfix expression — not enough operands for " + token);
+                }
+                int b = stack.pop();
+                int a = stack.pop();
+
+                int computed ;
+                switch (token){
+                    case "+":
+                        computed = a + b;
+                        break;
+
+                    case "-":
+                        computed = a - b;
+                        break;
+
+                    case "*":
+                        computed = a * b;
+                        break;
+
+                    case "/":
+                        if(b == 0){
+                            throw new ArithmeticException("Division by zero in expression");
+                        }
+                        computed = a / b;
+                        break;
+
+                    default:
+                        throw new IllegalArgumentException("Unknown operator: " + token);
+                }
+                stack.push(computed);
+            } else {
+                try {
+                    stack.push(Integer.parseInt(token));
+                } catch (NumberFormatException e){
+                    throw new IllegalArgumentException("Invalid token in expression: \"" + token + "\" is neither a number nor a valid operator");
+                }
+            }
+        }
+
+        if(stack.size() != 1){
+            throw new IllegalArgumentException("Invalid postfix expression — leftover operands");
+        }
+        return stack.pop();
+    }
+
+    public static boolean isOperator(String token){
+        return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
     }
 }
 
