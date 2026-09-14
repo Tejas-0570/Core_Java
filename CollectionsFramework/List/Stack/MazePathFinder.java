@@ -15,7 +15,8 @@ Iterative Stack makes the backtracking explicit and visible.
 or BFS with Queue for shortest path. ArrayDeque used as Stack for iterative DFS. For production pathfinding — A* algorithm with priority
 queue. This problem is the gateway to understanding graph traversal algorithms.
 -----------------------------------------------------------------------------------------------------------------------------------
-Maze: 0 0 1 0 0
+Maze:
+0 0 1 0 0
 0 0 0 1 0
 1 0 0 0 0
 0 1 0 1 0
@@ -29,9 +30,70 @@ Hint at bottom --->
 
 package List.Stack;
 
-public class MazePathFinder {
-    public static void main(String[] args) {
+import java.util.ArrayList;
+import java.util.Stack;
 
+public class MazePathFinder {
+    static int[][] maze = {
+            {0,0,1,0,0},
+            {0,0,0,1,0},
+            {1,0,0,0,0},
+            {0,1,0,1,0},
+            {0,0,0,0,0}
+    };
+    static boolean[][] visited = new boolean[5][5];
+
+    public static void main(String[] args) {
+        Stack<int[]> path = new Stack<>();
+
+        int r = 0, c = 0;
+        path.push(new int[]{r, c});
+        visited[r][c] = true;
+
+        while(!path.isEmpty()){
+            int[] current = path.peek();
+            r = current[0];
+            c = current[1];
+
+            if(r == 4 && c == 4){
+                System.out.println("Found! Path:");
+                printPath(path);
+                return;
+            }
+
+            // try 4 directions: right, down, left, up
+            if(isValid(r, c+1) && maze[r][c+1] != 1 && !visited[r][c+1]){
+                visited[r][c+1] = true;
+                path.push(new int[]{r, c+1});
+            } else if(isValid(r+1, c) && maze[r+1][c] != 1 && !visited[r+1][c]){
+                visited[r+1][c] = true;
+                path.push(new int[]{r+1, c});
+            } else if(isValid(r, c-1) && maze[r][c-1] != 1 && !visited[r][c-1]){
+                visited[r][c-1] = true;
+                path.push(new int[]{r, c-1});
+            } else if(isValid(r-1, c) && maze[r-1][c] != 1 && !visited[r-1][c]){
+                visited[r-1][c] = true;
+                path.push(new int[]{r-1, c});
+            } else {
+                // stuck — no valid direction — backtrack
+                int[] deadEnd = path.pop();
+                System.out.println("Backtracking from [" + deadEnd[0] + "," + deadEnd[1] + "]");
+            }
+        }
+
+        System.out.println("No path found — maze unsolvable from this start.");
+    }
+
+    static boolean isValid(int r, int c){
+        return r >= 0 && r < 5 && c >= 0 && c < 5;
+    }
+
+    static void printPath(Stack<int[]> path){
+        // Stack extends Vector, so indexed access goes bottom-to-top, i.e., start-to-finish order
+        for(int i = 0; i < path.size(); i++){
+            int[] pos = path.get(i);
+            System.out.println("(" + pos[0] + "," + pos[1] + ")");
+        }
     }
 }
 
