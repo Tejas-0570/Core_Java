@@ -32,10 +32,64 @@ Hint at bottom --->
 
 package Set.Hashset;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Scanner;
+
 public class UniqueVisitorTracker {
     public static void main(String[] args) {
+        UserVisit uv = new UserVisit();
 
+        uv.visitor();
+        uv.ListOfVisitors();
+        uv.CountOfVisitors();
     }
+}
+
+class UserVisit{
+    Scanner sc = new Scanner(System.in);
+    HashSet<String> visitors = new HashSet<>();
+    ArrayList<String> v = new ArrayList<>();
+     void visitor(){
+        for(int i = 0; i < 10; i++){
+            System.out.print("Name of visitor: ");
+            String name = sc.next();
+            boolean added = visitors.add(name);
+            v.add(name);
+            if(!added){
+                System.out.println("Duplicate - Already counted");
+            }
+
+        }
+    }
+
+    void ListOfVisitors(){
+         if(visitors.isEmpty()){
+             System.out.println("Empty");
+             return;
+         }
+        System.out.println("-------- Hashset -------------");
+         System.out.print("HashSet:[ ");
+         for (String visitor : visitors) {
+            System.out.print(visitor+" ");
+         }
+         System.out.println(" ]");
+
+        System.out.println("------- ArrayList ------------");
+        System.out.print("ArrayList:[ ");
+        for (String visitor : v) {
+            System.out.print(visitor+" ");
+        }
+        System.out.println(" ]");
+    }
+
+    void CountOfVisitors(){
+        System.out.println("Count of HashSet Visitors: "+visitors.size());
+        System.out.println("Count of ArrayList Visitors: "+v.size());
+    }
+
+
 }
 
 
