@@ -31,9 +31,39 @@ Hint at bottom ------>
 
 package Set.Hashset;
 
+import java.util.*;
+
 public class UniqueWordFrequencyCounter {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter input: ");
+        String input = sc.nextLine();
 
+        String[] words = input.split(" ");
+
+        HashSet<String> unique = new HashSet<>();
+        for(String w : words){
+            unique.add(w);
+        }
+
+        System.out.println("\nUnique: "+unique);
+
+        for(String u : unique){
+            int count = 0;
+            for(String w : words){
+                if(u.equals(w)){
+                    count++;
+                }
+            }
+            System.out.println(u + ": " + count);
+        }
+
+        ArrayList<String> sorted = new ArrayList<>(unique);
+        Collections.sort(sorted);
+        System.out.println("\nSorted Using ArrayList: "+sorted);
+
+        String[] arr = unique.toArray(new String[0]);
+        System.out.println("Array: "+ Arrays.toString(arr));
     }
 }
 
