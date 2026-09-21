@@ -32,9 +32,49 @@ Hint at bottom ---->
 
 package Set.Hashset;
 
+import java.util.HashSet;
+import java.util.Scanner;
+
 public class StudentEnrollmentComparator {
     public static void main(String[] args) {
+        HashSet<String> java = new HashSet<>();
+        HashSet<String> python = new HashSet<>();
+        Scanner sc = new Scanner(System.in);
 
+        System.out.print("Enter count of Java student: ");
+        int jCount = sc.nextInt();
+        System.out.print("Enter count of Python student: ");
+        int pCount = sc.nextInt();
+
+        for(int i = 0; i < jCount; i++){
+            System.out.print("Enter name of student (Java): ");
+            java.add(sc.next());
+        }
+
+        for(int i = 0; i < pCount; i++){
+            System.out.print("Enter name of student (Python): ");
+            python.add(sc.next());
+        }
+
+//      --------------- Union --------------------------
+        HashSet<String> union = new HashSet<>(java);
+        union.addAll(python);
+        System.out.println("Union: "+union);
+
+//      --------------- Intersection --------------------------
+        HashSet<String> intersection = new HashSet<>(java);
+        intersection.retainAll(python);
+        System.out.println("Intersection: "+intersection);
+
+//      --------------- Java Only --------------------------
+        HashSet<String> javaOnly = new HashSet<>(java);
+        javaOnly.removeAll(python);
+        System.out.println("Java Only: "+javaOnly);
+
+//      --------------- Python Only --------------------------
+        HashSet<String> pythonOnly = new HashSet<>(python);
+        pythonOnly.removeAll(java);
+        System.out.println("Python Only: "+pythonOnly);
     }
 }
 
