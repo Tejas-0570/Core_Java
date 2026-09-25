@@ -33,9 +33,41 @@ Hint at bottom ----->
 
 package Set.Hashset;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+
 public class FastProductCatalogLookup {
     public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        HashSet<String> set = new HashSet<>();
 
+        for(int i = 1; i <= 100000; i++){
+            list.add("Product"+i);
+            set.add("Product"+i);
+        }
+
+        String[] searches = new String[1000];
+        for(int i = 0; i < 1000; i++){
+            searches[i] = "Product"+(i*100);
+        }
+
+        long start = System.currentTimeMillis();
+        for(String s : searches){
+            list.contains(s);
+        }
+        long end = System.currentTimeMillis();
+        long listTime = end-start;
+
+        long startH = System.currentTimeMillis();
+        for(String s : searches){
+            set.contains(s);
+        }
+        long endH = System.currentTimeMillis();
+        long setTime = endH - startH;
+
+        System.out.println("ArrayList: "+listTime+"ms");
+        System.out.println("HashSet: "+setTime+"ms");
+//        System.out.println("HashSet is ~"+(listTime/setTime)+"x faster");
     }
 }
 
