@@ -32,9 +32,111 @@ Hint at bottom --->
 
 package Set.Hashset;
 
+import java.util.HashSet;
+import java.util.Objects;
+
 public class ConferenceAttendeeManager {
     public static void main(String[] args) {
+        ConferenceManager cm = new ConferenceManager();
 
+        cm.register(new Attendee("T001", "Raj", "Java"));
+        cm.register(new Attendee("T001", "Sara", "Python"));   // duplicate ticket -> rejected
+        cm.register(new Attendee("T002", "Ali", "Python"));
+        cm.register(new Attendee("T003", "John", "Java"));
+
+        System.out.println("isRegistered(T001): " + cm.isRegistered("T001"));
+        System.out.println("isRegistered(T999): " + cm.isRegistered("T999"));
+
+        cm.showAll();
+        cm.findBySession("Java");
+
+        cm.cancel("T002");
+        cm.cancel("T002");   // already cancelled -> not found
+        cm.showAll();
+    }
+}
+
+class Attendee {
+    private final String ticketId;
+    private final String name;
+    private final String session;
+
+    public Attendee(String ticketId, String name, String session) {
+        this.ticketId = ticketId;
+        this.name = name;
+        this.session = session;
+    }
+
+    public String getTicketId() { return ticketId; }
+    public String getName() { return name; }
+    public String getSession() { return session; }
+
+    // equals/hashCode on ticketId ONLY: name and session are deliberately ignored
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Attendee)) return false;
+        return this.ticketId.equals(((Attendee) o).ticketId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ticketId);
+    }
+
+    @Override
+    public String toString() {
+        return ticketId + " | " + name + " | " + session;
+    }
+}
+
+class ConferenceManager {
+    private final HashSet<Attendee> attendees = new HashSet<>();
+
+    public void register(Attendee a) {
+        if (attendees.add(a)) {
+            System.out.println("Registered: " + a.getName() + " (" + a.getTicketId() + ")");
+        } else {
+            System.out.println("Ticket already registered: " + a.getTicketId() + " (rejected)");
+        }
+    }
+
+    public boolean isRegistered(String ticketId) {
+        // dummy object: only ticketId matters for equals/hashCode
+        return attendees.contains(new Attendee(ticketId, "", ""));
+    }
+
+    public void cancel(String ticketId) {
+        if (attendees.remove(new Attendee(ticketId, "", ""))) {
+            System.out.println("Cancelled: " + ticketId);
+        } else {
+            System.out.println("Ticket not found: " + ticketId);
+        }
+    }
+
+    public void showAll() {
+        if (attendees.isEmpty()) {
+            System.out.println("No attendees registered");
+            return;
+        }
+        System.out.println("---- All attendees ----");
+        for (Attendee a : attendees) {
+            System.out.println(a);
+        }
+    }
+
+    public void findBySession(String session) {
+        System.out.println("---- Session: " + session + " ----");
+        boolean found = false;
+        for (Attendee a : attendees) {          // O(n): HashSet has no index/filter
+            if (a.getSession().equalsIgnoreCase(session)) {
+                System.out.println(a.getName());
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No attendees in this session");
+        }
     }
 }
 
