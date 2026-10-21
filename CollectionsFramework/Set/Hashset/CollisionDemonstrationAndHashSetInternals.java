@@ -33,9 +33,139 @@ Hint at bottom --->
 
 package Set.Hashset;
 
+import java.util.HashSet;
+import java.util.Objects;
+
 public class CollisionDemonstrationAndHashSetInternals {
+
+    static final int OBJECTS = 1000;
+    static final int SEARCH_COUNT = 500;
+    static final int REPEATS = 100;
+
     public static void main(String[] args) {
 
+        // ---------- Experiment 1: bad hash vs good hash ----------
+        HashSet<BadHash> badSet = new HashSet<>();
+        HashSet<GoodHash> goodSet = new HashSet<>();
+        for (int i = 0; i < OBJECTS; i++) {
+            badSet.add(new BadHash(i));
+            goodSet.add(new GoodHash(i));
+        }
+
+        // warm-up so the JIT compiler doesn't distort the first measurement
+        searchBad(badSet);
+        searchGood(goodSet);
+
+        long t1 = System.nanoTime();
+        searchBad(badSet);
+        long badTime = System.nanoTime() - t1;
+
+        long t2 = System.nanoTime();
+        searchGood(goodSet);
+        long goodTime = System.nanoTime() - t2;
+
+        System.out.println("=== contains(): " + SEARCH_COUNT + " items x " + REPEATS + " repeats ===");
+        System.out.println("BadHash  (hashCode always 1): " + badTime / 1_000_000.0 + " ms");
+        System.out.println("GoodHash (Objects.hash)     : " + goodTime / 1_000_000.0 + " ms");
+
+        // ---------- Experiment 2: treeification (Java 8+) ----------
+        HashSet<ComparableBadHash> treeSet = new HashSet<>();
+        for (int i = 0; i < OBJECTS; i++) {
+            treeSet.add(new ComparableBadHash(i));
+        }
+        searchComparable(treeSet); // warm-up
+        long t3 = System.nanoTime();
+        searchComparable(treeSet);
+        long treeTime = System.nanoTime() - t3;
+        System.out.println("BadHash + Comparable (tree) : " + treeTime / 1_000_000.0 + " ms");
+
+        // ---------- Experiment 3: initial capacity and rehashing ----------
+        int n = 2_000_000;
+
+        long t4 = System.nanoTime();
+        HashSet<Integer> defaultSet = new HashSet<>();           // 16 buckets, rehashes many times
+        for (int i = 0; i < n; i++) defaultSet.add(i);
+        long defaultTime = System.nanoTime() - t4;
+
+        long t5 = System.nanoTime();
+        HashSet<Integer> presized = new HashSet<>((int) (n / 0.75f) + 1, 0.75f); // no rehashing
+        for (int i = 0; i < n; i++) presized.add(i);
+        long presizedTime = System.nanoTime() - t5;
+
+        System.out.println("\n=== Inserting " + n + " Integers ===");
+        System.out.println("Default HashSet : " + defaultTime / 1_000_000.0 + " ms");
+        System.out.println("Pre-sized       : " + presizedTime / 1_000_000.0 + " ms");
+    }
+
+    static void searchBad(HashSet<BadHash> set) {
+        for (int r = 0; r < REPEATS; r++)
+            for (int i = 0; i < SEARCH_COUNT; i++)
+                set.contains(new BadHash(i));
+    }
+
+    static void searchGood(HashSet<GoodHash> set) {
+        for (int r = 0; r < REPEATS; r++)
+            for (int i = 0; i < SEARCH_COUNT; i++)
+                set.contains(new GoodHash(i));
+    }
+
+    static void searchComparable(HashSet<ComparableBadHash> set) {
+        for (int r = 0; r < REPEATS; r++)
+            for (int i = 0; i < SEARCH_COUNT; i++)
+                set.contains(new ComparableBadHash(i));
+    }
+}
+
+// Worst case: every instance lands in the same bucket
+class BadHash {
+    private final int id;
+    BadHash(int id) { this.id = id; }
+
+    @Override
+    public int hashCode() { return 1; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BadHash)) return false;
+        return this.id == ((BadHash) o).id;
+    }
+}
+
+// Same class, proper hashCode: spread across buckets
+class GoodHash {
+    private final int id;
+    GoodHash(int id) { this.id = id; }
+
+    @Override
+    public int hashCode() { return Objects.hash(id); }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GoodHash)) return false;
+        return this.id == ((GoodHash) o).id;
+    }
+}
+
+// Bad hash, BUT Comparable, so Java 8's tree bins can order the keys
+class ComparableBadHash implements Comparable<ComparableBadHash> {
+    private final int id;
+    ComparableBadHash(int id) { this.id = id; }
+
+    @Override
+    public int hashCode() { return 1; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ComparableBadHash)) return false;
+        return this.id == ((ComparableBadHash) o).id;
+    }
+
+    @Override
+    public int compareTo(ComparableBadHash other) {
+        return Integer.compare(this.id, other.id);
     }
 }
 
