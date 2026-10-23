@@ -33,10 +33,105 @@ Hint at bottom -->
 
 package Set.Hashset;
 
+import java.util.HashSet;
+import java.util.Objects;
+
 public class SocialMediaFriendSuggestionSystem {
     public static void main(String[] args) {
+        User raj  = new User("U1", "Raj");
+        User sara = new User("U2", "Sara");
+        User ali  = new User("U3", "Ali");
+        User john = new User("U4", "John");
+        User priya = new User("U5", "Priya");
+        User mike = new User("U6", "Mike");
 
+        raj.addFriend(sara);
+        raj.addFriend(ali);
+        raj.addFriend(john);
+        sara.addFriend(ali);
+        sara.addFriend(priya);
+        sara.addFriend(mike);
+
+        System.out.println("Raj's friends : " + raj.getFriends());
+        System.out.println("Sara's friends: " + sara.getFriends());
+
+        System.out.println("isFriend(Raj, Sara)  : " + raj.isFriend(sara));    // true
+        System.out.println("isFriend(Raj, Priya) : " + raj.isFriend(priya));   // false
+
+        System.out.println("Mutual(Raj, Sara)    : " + raj.mutualFriends(sara));  // [Ali]
+        System.out.println("Suggestions for Raj  : " + raj.suggestFriends());     // [Priya, Mike]
+
+        raj.addFriend(raj);   // rejected: cannot friend yourself
+
+        raj.removeFriend(sara);
+        System.out.println("After unfriending, Raj's friends : " + raj.getFriends());
+        System.out.println("After unfriending, Sara's friends: " + sara.getFriends());
     }
+}
+
+class User {
+    private final String userId;
+    private final String name;
+    private final HashSet<User> friends = new HashSet<>();
+
+    public User(String userId, String name) {
+        this.userId = userId;
+        this.name = name;
+    }
+
+    public String getName() { return name; }
+
+    // return a copy so outsiders cannot modify the friend list directly
+    public HashSet<User> getFriends() { return new HashSet<>(friends); }
+
+    public void addFriend(User u) {
+        if (u == null || this.equals(u)) {
+            System.out.println("Invalid friend request");
+            return;
+        }
+        friends.add(u);        // bidirectional: friendship is mutual
+        u.friends.add(this);
+    }
+
+    public void removeFriend(User u) {
+        friends.remove(u);
+        u.friends.remove(this);
+    }
+
+    public boolean isFriend(User u) {
+        return friends.contains(u);   // O(1)
+    }
+
+    public HashSet<User> mutualFriends(User other) {
+        HashSet<User> mutual = new HashSet<>(this.friends);   // copy first
+        mutual.retainAll(other.friends);                       // keep only common
+        return mutual;
+    }
+
+    public HashSet<User> suggestFriends() {
+        HashSet<User> suggestions = new HashSet<>();
+        for (User f : this.friends) {
+            suggestions.addAll(f.friends);     // friends of friends
+        }
+        suggestions.removeAll(this.friends);   // drop people already friends
+        suggestions.remove(this);              // drop self
+        return suggestions;
+    }
+
+    // equals/hashCode on userId ONLY
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+        return this.userId.equals(((User) o).userId);
+    }
+
+    @Override
+    public int hashCode() { return Objects.hash(userId); }
+
+    // name only: printing friends here would recurse forever (Raj -> Sara -> Raj ...)
+    @Override
+    public String toString() { return name; }
 }
 
 /*
