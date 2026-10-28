@@ -33,9 +33,74 @@ Hint at bottom --->
 
 package Set.Hashset;
 
+import java.util.*;
+
 public class HashSet_vs_LinkedHashSet_vs_TreeSet {
     public static void main(String[] args) {
 
+        // ---------- Part 1: scores as keys (Set<Integer>) ----------
+        int[] scores = {92, 78, 92, 88, 65};   // Sara, Raj, Ali, John, Priya (92 repeats)
+
+        Set<Integer> hashSet   = new HashSet<>();
+        Set<Integer> linkedSet = new LinkedHashSet<>();
+        Set<Integer> treeSet   = new TreeSet<>();
+        for (int s : scores) {
+            hashSet.add(s);
+            linkedSet.add(s);
+            treeSet.add(s);
+        }
+
+        System.out.println("=== Scores ===");
+        System.out.println("HashSet       : " + hashSet);
+        System.out.println("LinkedHashSet : " + linkedSet);   // [92, 78, 88, 65]
+        System.out.println("TreeSet       : " + treeSet);     // [65, 78, 88, 92]
+        System.out.println("contains(88)  : " + hashSet.contains(88) + " / "
+                + linkedSet.contains(88) + " / " + treeSet.contains(88));
+
+        // TreeSet-only methods need a TreeSet reference (Set has no first()/last())
+        TreeSet<Integer> ts = (TreeSet<Integer>) treeSet;
+        System.out.println("first()       : " + ts.first());          // 65
+        System.out.println("last()        : " + ts.last());           // 92
+        System.out.println("headSet(80)   : " + ts.headSet(80));      // [65, 78]
+        System.out.println("tailSet(80)   : " + ts.tailSet(80));      // [88, 92]
+        System.out.println("subSet(70,90) : " + ts.subSet(70, 90));   // [78, 88]
+
+        // ---------- Part 2: names as keys (order differences are visible) ----------
+        String[] names = {"Sara", "Raj", "Ali", "John", "Priya"};
+        Set<String> hashNames   = new HashSet<>(Arrays.asList(names));
+        Set<String> linkedNames = new LinkedHashSet<>(Arrays.asList(names));
+        Set<String> treeNames   = new TreeSet<>(Arrays.asList(names));
+
+        System.out.println("\n=== Names ===");
+        System.out.println("HashSet       : " + hashNames);     // hash order
+        System.out.println("LinkedHashSet : " + linkedNames);   // [Sara, Raj, Ali, John, Priya]
+        System.out.println("TreeSet       : " + treeNames);     // [Ali, John, Priya, Raj, Sara]
+
+        // ---------- Part 3: performance ----------
+        int n = 100_000;
+        Random rnd = new Random(42);
+        int[] data = new int[n];
+        for (int i = 0; i < n; i++) data[i] = rnd.nextInt();
+
+        System.out.println("\n=== add() of " + n + " random ints ===");
+        System.out.println("HashSet       : " + time(new HashSet<>(), data) + " ms");
+        System.out.println("LinkedHashSet : " + time(new LinkedHashSet<>(), data) + " ms");
+        System.out.println("TreeSet       : " + time(new TreeSet<>(), data) + " ms");
+
+        // ---------- Decision guide ----------
+        // HashSet:       unique + fastest (O(1)) + order irrelevant
+        //                (membership tests, deduplication, caches)
+        // LinkedHashSet: unique + insertion order needed
+        //                (recent items, LRU cache basis)
+        // TreeSet:       unique + always sorted + range queries (O(log n))
+        //                (leaderboards, first/last, headSet/tailSet)
+        // Default when unsure: HashSet. Add ordering only when required.
+    }
+
+    static double time(Set<Integer> set, int[] data) {
+        long start = System.nanoTime();
+        for (int x : data) set.add(x);
+        return (System.nanoTime() - start) / 1_000_000.0;
     }
 }
 
